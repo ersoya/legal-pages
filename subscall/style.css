@@ -1,0 +1,28 @@
+:root {
+    --primary-color: #2688EB;
+    --background-color: #000000;
+    --gradient-color: #2688EB;
+    --font-family: 'Lato', sans-serif;
+}
+
+body::before {
+    background: radial-gradient(circle at center, rgba(38, 136, 235, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.background-overlay {
+    background: url('https://www.transparenttextures.com/patterns/cubes.png');
+}
+
+.logo-text {
+    letter-spacing: -1px;
+    background-image: linear-gradient(135deg, #ffffff 0%, #2688EB 100%);
+}
+
+.header h1 {
+    letter-spacing: -1.5px;
+}
+
+.contact-link:hover {
+    color: #8ca6ff;
+    border-bottom-color: #8ca6ff;
+}
