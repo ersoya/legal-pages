@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Replyce</title>
+    <meta name="description"
+        content="Replyce Support. Get help with questions, feedback, bug reports, or feature requests.">
+
+    <!-- Google Fonts: Raleway -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="background-overlay"></div>
+    <main class="container">
+        <header class="header animate-up">
+            <div class="logo">
+                <span class="logo-text">Replyce</span>
+            </div>
+            <h1>Support</h1>
+        </header>
+
+        <section class="content-card animate-up">
+            <div class="intro">
+                <p>Need help with Replyce?</p>
+            </div>
+
+            <article class="policy-section">
+                <h2>Contact Us</h2>
+                <p>For questions, feedback, bug reports, or feature requests, contact us at:</p>
+                <p>Email: <a href="mailto:ardaaersoy@gmail.com" class="contact-link">ardaaersoy@gmail.com</a></p>
+            </article>
+
+            <article class="policy-section">
+                <h2>About Replyce</h2>
+                <p>Replyce is an AI-powered writing assistant that helps users create replies for everyday
+                    conversations.</p>
+            </article>
+
+            <article class="policy-section">
+                <h2>Privacy Policy</h2>
+                <p><a href="../privacy/" class="contact-link">Privacy Policy</a></p>
+            </article>
+
+            <article class="policy-section">
+                <h2>Terms of Use</h2>
+                <p><a href="../terms/" class="contact-link">Terms of Use</a></p>
+            </article>
+        </section>
+
+        <footer class="footer animate-up">
+            <p>© 2026 Replyce. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.animate-up');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('visible');
+                }, 100 * index);
+            });
+        });
+    </script>
+</body>
+
+</html>
