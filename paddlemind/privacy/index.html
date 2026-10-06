@@ -20,7 +20,7 @@
                 <span class="logo-text">PaddleMind</span>
             </div>
             <h1>Privacy Policy</h1>
-            <p class="last-updated">Last updated: August 2026</p>
+            <p class="last-updated">Last updated: October 6, 2026</p>
         </header>
 
         <section class="content-card animate-up">
@@ -37,7 +37,7 @@
                 <ul>
                     <li>Onboarding selections, including skill level, dominant hand, and improvement goal</li>
                     <li>Videos you record or select for shot analysis</li>
-                    <li>Locally generated frames, pose landmarks, scores, coaching results, evidence images, and
+                    <li>Locally generated frames, body-pose landmarks, scores, coaching results, evidence images, and
                         useful/not-useful feedback</li>
                     <li>Limited app interaction and operational data</li>
                     <li>Technical and diagnostic information, such as app version, device and operating system details,
@@ -51,20 +51,56 @@
                 <p>Camera access is used only to record a short pickleball shot video. Photo Library access is used
                     only to let you select a shot video for analysis. Importing a video does not modify or delete the
                     original item in your Photo Library.</p>
-                <p>PaddleMind's V1 analysis is visual. The app does not configure audio recording and does not request
+                <p>PaddleMind's analysis is visual. The app does not configure audio recording and does not request
                     microphone access.</p>
             </article>
 
             <article class="policy-section">
                 <h2>3. On-Device Video Analysis</h2>
-                <p>Video validation, normalization, frame extraction, body-pose analysis, scoring, and evidence
-                    generation run on your device in V1. Your videos, images, extracted frames, pose landmarks, scores,
-                    and coaching evidence are not uploaded for analysis or used for model training.</p>
-                <p>PaddleMind does not send your media to an external artificial intelligence service in V1.</p>
+                <p>All video validation, normalization, frame extraction, body-pose analysis, scoring, and evidence
+                    generation run locally on your device. Body-pose analysis is performed with Apple's Vision
+                    framework, specifically <code>VNDetectHumanBodyPoseRequest</code>, which runs on the device.</p>
+                <p>PaddleMind does not use a third-party artificial intelligence service to analyze your content.
+                    PaddleMind does not send your videos, images, extracted frames, body-pose landmarks, scores,
+                    coaching evidence, or other user content to OpenAI, Google Gemini, Anthropic, or any other
+                    third-party AI provider, and does not upload them to PaddleMind or to cloud storage for
+                    analysis.</p>
+                <p>Your videos and the data derived from them, including extracted frames, body-pose landmarks,
+                    scores, and evidence images, are not used for model training.</p>
             </article>
 
             <article class="policy-section">
-                <h2>4. Local Storage and Retention</h2>
+                <h2>4. Face Data and Biometric Information</h2>
+                <p>PaddleMind does not perform face detection, face recognition, identity matching, facial-feature
+                    analysis, authentication, or biometric identification. It does not create or retain facial
+                    landmarks, face geometry, face templates, embeddings, or other biometric identifiers.</p>
+                <p>Body-pose analysis processes only body joints, such as the neck, shoulders, elbows, wrists, hips,
+                    knees, and ankles, for shot analysis. A video you record or select may incidentally show the
+                    player's face, and a locally retained evidence image may also incidentally show the player's
+                    face. No face data is separately extracted from these videos or images.</p>
+                <p>Videos, images, body-pose information, and any incidentally visible face imagery are processed and
+                    retained only on the device as described below. They are not uploaded, not shared with third
+                    parties, and not stored on external servers, and they are not sent to PaddleMind, a third-party
+                    AI provider, or cloud storage. This information is not used for advertising, tracking,
+                    profiling, authentication, identification, or model training.</p>
+                <p><strong>Storage, retention, and deletion:</strong></p>
+                <ul>
+                    <li>Temporary working video copies remain inside the app container on your device.</li>
+                    <li>Working video copies are removed when the active analysis flow ends where possible. Startup
+                        cleanup removes working files older than 24 hours and retains no more than 12 temporary
+                        videos.</li>
+                    <li>Raw video is not retained as part of analysis history by default.</li>
+                    <li>Up to 30 derived evidence images may be stored locally for analysis history.</li>
+                    <li>Evidence images are removed as the retention limit replaces older items, or when the app and
+                        its data are deleted from the device.</li>
+                </ul>
+                <p>PaddleMind does not currently include an in-app action to delete all local data. Deleting the app
+                    removes the data stored in the app container on the device. It does not remove copies that may
+                    remain in device or system backups, which are controlled by your device and backup settings.</p>
+            </article>
+
+            <article class="policy-section">
+                <h2>5. Local Storage and Retention</h2>
                 <ul>
                     <li>Your onboarding profile and free-analysis usage remain in the app's local storage until the app
                         data is removed.</li>
@@ -77,12 +113,14 @@
                     <li>Active-analysis recovery metadata is retained until the analysis completes, is canceled,
                         becomes invalid, or is cleaned up.</li>
                 </ul>
-                <p>Removing PaddleMind deletes data in the app container, subject to your device and backup settings.
-                    V1 does not currently include an in-app "Delete all local data" action.</p>
+                <p>Removing PaddleMind deletes the data stored in the app container on the device. It does not
+                    remove copies that may remain in device or system backups, which are controlled by your device
+                    and backup settings. PaddleMind does not currently include an in-app "Delete all local data"
+                    action.</p>
             </article>
 
             <article class="policy-section">
-                <h2>5. Analytics and Diagnostics</h2>
+                <h2>6. Analytics and Diagnostics</h2>
                 <p>We use limited operational events to understand app reliability and improve the coaching
                     experience. These events may include:</p>
                 <ul>
@@ -92,13 +130,21 @@
                     <li>Timing measurements and score, confidence, and duration buckets</li>
                     <li>Issue and drill identifiers, useful/not-useful feedback, entitlement state, and purchase events</li>
                 </ul>
-                <p>Operational events do not include video or image data, extracted frames, pose landmark arrays, local
-                    file paths or names, Photo Library identifiers, analysis identifiers, coaching explanations, or
-                    other free-form content.</p>
+                <p>Analytics and diagnostics are provided by Firebase. Firebase does not receive any of the
+                    following:</p>
+                <ul>
+                    <li>Videos or images</li>
+                    <li>Extracted frames</li>
+                    <li>Face imagery or biometric identifiers</li>
+                    <li>Body-pose landmark arrays</li>
+                    <li>Local file paths or names, or Photo Library identifiers</li>
+                    <li>Analysis identifiers</li>
+                    <li>Coaching explanations or other free-form coaching content</li>
+                </ul>
             </article>
 
             <article class="policy-section">
-                <h2>6. Purchases and Subscriptions</h2>
+                <h2>7. Purchases and Subscriptions</h2>
                 <p>Purchases are processed by Apple, and subscription access is managed with RevenueCat. Apple and
                     RevenueCat may process purchase history, subscription status, product identifiers, transaction
                     information, and an app-specific identifier as necessary to complete purchases and maintain your
@@ -107,7 +153,7 @@
             </article>
 
             <article class="policy-section">
-                <h2>7. How We Use Information</h2>
+                <h2>8. How We Use Information</h2>
                 <p>Information is used to:</p>
                 <ul>
                     <li>Provide local shot analysis, coaching results, history, and progress comparisons</li>
@@ -121,7 +167,7 @@
             </article>
 
             <article class="policy-section">
-                <h2>8. Third-Party Services</h2>
+                <h2>9. Third-Party Services</h2>
                 <p>PaddleMind uses the following third-party services:</p>
                 <ul>
                     <li><strong>Firebase Analytics</strong> – to understand aggregate app usage and engagement</li>
@@ -130,46 +176,57 @@
                     <li><strong>RevenueCat</strong> – to manage purchases, subscriptions, and Pro entitlement status</li>
                     <li><strong>Apple App Store</strong> – to process payments and manage subscriptions</li>
                 </ul>
-                <p>These providers process information under their own privacy policies and only for the functionality
-                    they provide to PaddleMind.</p>
+                <p>Firebase and RevenueCat are not used for video analysis or AI analysis. These providers do not
+                    receive videos, images, extracted frames, face imagery, or pose-landmark data. They may process
+                    only the limited operational, diagnostic, or purchase information required for the functions
+                    listed above.</p>
+                <p>Providers that process information on PaddleMind's behalf do so under their own terms and privacy
+                    policies. They are required to protect that information in a manner consistent with this Privacy
+                    Policy and may not use it for purposes unrelated to the services they provide to PaddleMind.</p>
             </article>
 
             <article class="policy-section">
-                <h2>9. Data Sharing and Tracking</h2>
+                <h2>10. Data Sharing and Tracking</h2>
                 <p>We do not sell your personal information, videos, or coaching data. PaddleMind does not use your data
-                    for cross-app advertising tracking. Limited information may be processed by the service providers
-                    listed above as necessary to provide their functionality, or disclosed when required by law or to
-                    protect rights, safety, and security.</p>
+                    for cross-app advertising tracking.</p>
+                <p>Videos, images, extracted frames, face imagery, and pose-landmark data are not shared with any
+                    third party, including Firebase, RevenueCat, or any third-party AI provider. The service
+                    providers listed above are not used for video or AI analysis and may process only the limited
+                    operational, diagnostic, or purchase information required for their stated functions. Providers
+                    processing information on PaddleMind's behalf are required to protect it in a manner consistent
+                    with this Privacy Policy and may not use it for unrelated purposes.</p>
+                <p>Limited information may also be disclosed when required by law or to protect rights, safety, and
+                    security.</p>
             </article>
 
             <article class="policy-section">
-                <h2>10. Data Security</h2>
+                <h2>11. Data Security</h2>
                 <p>We use reasonable technical and organizational measures to protect information. Local data remains
                     subject to the security of your device, operating system, passcode, backups, and any other
                     device-level protections you use. No security method can guarantee absolute protection.</p>
             </article>
 
             <article class="policy-section">
-                <h2>11. Children's Privacy</h2>
+                <h2>12. Children's Privacy</h2>
                 <p>PaddleMind is not directed to children under the age of 13, and we do not knowingly collect personal
                     information from children under 13.</p>
             </article>
 
             <article class="policy-section">
-                <h2>12. Future Changes to Analysis</h2>
+                <h2>13. Future Changes to Analysis</h2>
                 <p>Any future feature that uploads media for cloud analysis or model training would require a separate
                     review of consent, retention, deletion, security, and privacy disclosures before it is introduced.
                     This policy will be updated before such a feature becomes available.</p>
             </article>
 
             <article class="policy-section">
-                <h2>13. Changes to This Policy</h2>
+                <h2>14. Changes to This Policy</h2>
                 <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an
                     updated date.</p>
             </article>
 
             <article class="policy-section">
-                <h2>14. Contact</h2>
+                <h2>15. Contact</h2>
                 <p>If you have questions about this Privacy Policy, contact us at:</p>
                 <a href="mailto:ardaaersoy@gmail.com" class="contact-link">ardaaersoy@gmail.com</a>
             </article>
